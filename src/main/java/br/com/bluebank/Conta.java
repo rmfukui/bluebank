@@ -6,14 +6,14 @@ public class Conta {
 
 	Correntista correntista;
 	Agencia agencia;
-	Integer numero;
+	String numero;
 	private BigDecimal saldo;
 	
-	public Conta(Correntista correntista, Agencia agencia, Integer numeroConta) {
+	public Conta(Correntista correntista, Agencia agencia, String numeroConta) {
 		setCorrentista(correntista);
 		setAgencia(agencia);
 		setNumero(numeroConta);
-		setSaldo(new BigDecimal(0));
+		setSaldo(new BigDecimal(0.0));
 	}
 	
 	public Correntista getCorrentista() {
@@ -32,11 +32,11 @@ public class Conta {
 		this.agencia = agencia;
 	}
 
-	public Integer getNumero() {
+	public String getNumero() {
 		return numero;
 	}
 
-	private void setNumero(Integer numero) {
+	private void setNumero(String numero) {
 		this.numero = numero;
 	}
 
@@ -46,6 +46,18 @@ public class Conta {
 
 	public void setSaldo(BigDecimal saldo) {
 		this.saldo = saldo;
+	}
+
+	public void subtrai(BigDecimal valor) throws Exception {
+		if (valor.doubleValue() > getSaldo().doubleValue()) {
+			throw new Exception("Saldo insuficiente.");
+		}
+		
+		setSaldo(getSaldo().subtract(valor));		
+	}
+
+	public void adiciona(BigDecimal valor) {
+		setSaldo(getSaldo().add(valor));
 	}
 
 }
