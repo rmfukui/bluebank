@@ -33,7 +33,7 @@ public class SaqueTest {
 		try {
 			new Saque(conta, BigDecimal.valueOf(100));
 		} catch (Exception e) {
-			assertEquals("Saldo Insuficiente", e.getCause().getMessage());
+			assertEquals("Saldo insuficiente.", e.getMessage());
 			throw e;
 		}
 	}
