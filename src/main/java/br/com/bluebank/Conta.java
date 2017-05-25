@@ -2,11 +2,25 @@ package br.com.bluebank;
 
 import java.math.BigDecimal;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.ManyToOne;
+
+@Entity
 public class Conta {
 
-	Correntista correntista;
-	Agencia agencia;
-	String numero;
+	@Id
+	@GeneratedValue
+	private Long id;
+	
+	@ManyToOne
+	private Correntista correntista;
+	
+	@ManyToOne
+	private Agencia agencia;
+	
+	private String numero;
 	private BigDecimal saldo;
 	
 	public Conta(Correntista correntista, Agencia agencia, String numeroConta) {

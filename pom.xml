@@ -4,4 +4,11 @@
   <artifactId>bluebank</artifactId>
   <version>0.0.1-SNAPSHOT</version>
   <name>bancoazul</name>
+  <dependencies>
+  	<dependency>
+  		<groupId>org.hibernate</groupId>
+  		<artifactId>hibernate-core</artifactId>
+  		<version>5.0.12.Final</version>
+  	</dependency>
+  </dependencies>
 </project>

@@ -1,7 +1,18 @@
 package br.com.bluebank;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+
+@Entity
 public class Correntista {
+	
+	@Id
+	@GeneratedValue
+	private Long id;	
+	
 	private String nome;
+	
 	private String cpf;
 	
 	public Correntista(String nome, String string) {
